@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
-    <div>
-      <img alt="Vue logo" src="./assets/logo.png" />
+    <div class="logo-name">
+      <img alt="Vue logo" src="./assets/logo.png" /> Free to Play Games
     </div>
     <div>
       <router-link to="/">Home</router-link> |
@@ -35,8 +35,15 @@
   background-color: #202a35;
 }
 
+.logo-name {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
 #nav img {
   max-width: 30px;
+  margin-right: 14px;
 }
 
 #nav a {
