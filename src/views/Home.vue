@@ -73,7 +73,7 @@ h2 {
 }
 
 .box .body {
-  padding: 10px;
+  padding: 10px 16px 16px;
   text-align: left;
 }
 
@@ -84,7 +84,8 @@ h2 {
 }
 
 .body p {
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1.3em;
   margin-bottom: 10px;
   opacity: 0.8;
 }
