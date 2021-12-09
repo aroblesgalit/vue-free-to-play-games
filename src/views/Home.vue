@@ -86,11 +86,20 @@ h2 {
 .body p {
   font-size: 14px;
   margin-bottom: 10px;
+  opacity: 0.8;
 }
 
 .body .details {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 10px;
+  color: #181f25;
+  font-weight: bold;
+}
+
+.details span {
+  background-color: #5b646e;
+  padding: 4px 6px;
+  border-radius: 4px;
 }
 </style>
