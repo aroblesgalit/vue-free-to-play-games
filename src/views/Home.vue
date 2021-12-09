@@ -53,5 +53,44 @@ export default {
 
 h2 {
   text-align: left;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: flex;
+}
+
+.box {
+  width: 100%;
+  max-width: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #202a35;
+}
+
+.images img {
+  max-width: 100%;
+}
+
+.box .body {
+  padding: 10px;
+  text-align: left;
+}
+
+.body h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.body p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.body .details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
 }
 </style>
