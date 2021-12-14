@@ -42,7 +42,22 @@
 
 export default {
   name: 'Home',
-  components: {}
+  components: {},
+  data () {
+    return {
+      games: []
+    }
+  },
+  methods: {
+    async fetchGames () {
+      const res = await fetch('https://www.freetogame.com/api/games')
+      console.log(res.json())
+      return res.json()
+    }
+  },
+  async created () {
+    this.games = await this.fetchGames()
+  }
 }
 </script>
 
