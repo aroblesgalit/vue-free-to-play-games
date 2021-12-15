@@ -39,6 +39,7 @@
 
 <script>
 // @ is an alias to /src
+import axios from 'axios'
 
 export default {
   name: 'Home',
@@ -50,9 +51,10 @@ export default {
   },
   methods: {
     async fetchGames () {
-      const res = await fetch('https://www.freetogame.com/api/games')
-      console.log(res.json())
-      return res.json()
+      const res = await fetch('http://localhost:8080/api/games')
+      const data = res.json()
+      console.log(data)
+      return data
     }
   },
   async created () {
