@@ -2,12 +2,9 @@
   <div class="home">
     <h2>Featured</h2>
     <div class="grid">
-      <div class="box">
+      <div v-for="game in games" :key="game.id" class="box">
         <div class="images">
-          <img
-            src="https://www.freetogame.com/g/1/dauntless-1.jpg"
-            alt="screenshot"
-          />
+          <img :src="game.thumbnail" alt="screenshot" />
           <!-- <img
             src="https://www.freetogame.com/g/1/dauntless-2.jpg"
             alt="screenshot"
@@ -22,14 +19,11 @@
           /> -->
         </div>
         <div class="body">
-          <h3>Dauntless</h3>
-          <p>
-            A free-to-play, co-op action RPG with gameplay similar to Monster
-            Hunter.
-          </p>
+          <h3>{{ game.title }}</h3>
+          <p>{{ game.short_description }}</p>
           <div class="details">
-            <span>MMORPG</span>
-            <span>Windows</span>
+            <span>{{ game.genre }}</span>
+            <span>{{ game.platform }}</span>
           </div>
         </div>
       </div>
@@ -74,6 +68,8 @@ h2 {
 
 .grid {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .box {
