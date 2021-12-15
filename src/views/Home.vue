@@ -51,9 +51,8 @@ export default {
   },
   methods: {
     async fetchGames () {
-      const res = await fetch('http://localhost:8080/api/games')
-      const data = res.json()
-      console.log(data)
+      const res = await axios.get('http://localhost:8080/api/games')
+      const data = res.data
       return data
     }
   },
