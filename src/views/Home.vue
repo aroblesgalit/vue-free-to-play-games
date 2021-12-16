@@ -2,31 +2,7 @@
   <div class="home">
     <h2>Featured</h2>
     <div class="grid">
-      <div v-for="game in games" :key="game.id" class="box">
-        <div class="images">
-          <img :src="game.thumbnail" alt="screenshot" />
-          <!-- <img
-            src="https://www.freetogame.com/g/1/dauntless-2.jpg"
-            alt="screenshot"
-          />
-          <img
-            src="https://www.freetogame.com/g/1/dauntless-3.jpg"
-            alt="screenshot"
-          />
-          <img
-            src="https://www.freetogame.com/g/1/dauntless-4.jpg"
-            alt="screenshot"
-          /> -->
-        </div>
-        <div class="body">
-          <h3>{{ game.title }}</h3>
-          <p>{{ game.short_description }}</p>
-          <div class="details">
-            <span>{{ game.genre }}</span>
-            <span>{{ game.platform }}</span>
-          </div>
-        </div>
-      </div>
+      <Games :games="games" />
     </div>
   </div>
 </template>
@@ -34,10 +10,13 @@
 <script>
 // @ is an alias to /src
 import axios from 'axios'
+import Games from '../components/Games'
 
 export default {
   name: 'Home',
-  components: {},
+  components: {
+    Games
+  },
   data () {
     return {
       games: []
@@ -70,49 +49,5 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-}
-
-.box {
-  width: 100%;
-  max-width: 240px;
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #202a35;
-}
-
-.images img {
-  max-width: 100%;
-}
-
-.box .body {
-  padding: 10px 16px 16px;
-  text-align: left;
-}
-
-.body h3 {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.body p {
-  font-size: 13px;
-  line-height: 1.3em;
-  margin-bottom: 10px;
-  opacity: 0.8;
-}
-
-.body .details {
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
-  color: #181f25;
-  font-weight: bold;
-}
-
-.details span {
-  background-color: #5b646e;
-  padding: 4px 6px;
-  border-radius: 4px;
 }
 </style>
