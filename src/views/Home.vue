@@ -6,6 +6,12 @@
         <Games :games="shooters" />
       </div>
     </div>
+    <div>
+      <h2>MMORPG</h2>
+      <div class="grid">
+        <Games :games="mmorpgs" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,7 +28,8 @@ export default {
   data () {
     return {
       allGames: [],
-      shooters: []
+      shooters: [],
+      mmorpgs: []
     }
   },
   methods: {
@@ -42,7 +49,9 @@ export default {
   async created () {
     // this.allGames = await this.fetchAllGames()
     const tempShooters = await this.fetchByCategory('shooter')
+    const tempMmorpgs = await this.fetchByCategory('mmorpg')
     this.shooters = tempShooters.slice(0, 8)
+    this.mmorpgs = tempMmorpgs.slice(0, 8)
   }
 }
 </script>
@@ -61,5 +70,6 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  margin-bottom: 60px;
 }
 </style>
