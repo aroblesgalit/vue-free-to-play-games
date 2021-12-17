@@ -1,8 +1,10 @@
 <template>
   <div class="home">
-    <h2>Featured</h2>
-    <div class="grid">
-      <Games :games="allGames" />
+    <div>
+      <h2>Shooter</h2>
+      <div class="grid">
+        <Games :games="shooters" />
+      </div>
     </div>
   </div>
 </template>
@@ -31,15 +33,16 @@ export default {
     },
     async fetchByCategory (category) {
       const res = await axios.get(
-        `https://www.freetogame.com/api/games?category=${category}`
+        `http://localhost:8080/api/games?category=${category}`
       )
       const data = res.data
       return data
     }
   },
   async created () {
-    this.allGames = await this.fetchAllGames()
-    this.shooters = await this.fetchByCategory('shooters')
+    // this.allGames = await this.fetchAllGames()
+    const tempShooters = await this.fetchByCategory('shooter')
+    this.shooters = tempShooters.slice(0, 8)
   }
 }
 </script>
