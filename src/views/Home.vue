@@ -1,15 +1,21 @@
 <template>
   <div class="home">
-    <div>
+    <div class="section">
       <h2>Shooter</h2>
       <div class="grid">
         <Games :games="shooters" />
       </div>
     </div>
-    <div>
+    <div class="section">
       <h2>MMORPG</h2>
       <div class="grid">
         <Games :games="mmorpgs" />
+      </div>
+    </div>
+    <div class="section">
+      <h2>Social</h2>
+      <div class="grid">
+        <Games :games="socials" />
       </div>
     </div>
   </div>
@@ -29,7 +35,8 @@ export default {
     return {
       allGames: [],
       shooters: [],
-      mmorpgs: []
+      mmorpgs: [],
+      socials: []
     }
   },
   methods: {
@@ -50,8 +57,10 @@ export default {
     // this.allGames = await this.fetchAllGames()
     const tempShooters = await this.fetchByCategory('shooter')
     const tempMmorpgs = await this.fetchByCategory('mmorpg')
+    const tempSocials = await this.fetchByCategory('social')
     this.shooters = tempShooters.slice(0, 8)
     this.mmorpgs = tempMmorpgs.slice(0, 8)
+    this.socials = tempSocials.slice(0, 8)
   }
 }
 </script>
@@ -59,6 +68,10 @@ export default {
 <style scoped>
 .home {
   padding: 40px 100px;
+}
+
+.section {
+  margin-bottom: 60px;
 }
 
 h2 {
@@ -70,6 +83,5 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 60px;
 }
 </style>
