@@ -2,7 +2,7 @@
   <div class="home">
     <h2>Featured</h2>
     <div class="grid">
-      <Games :games="games" />
+      <Games :games="allGames" />
     </div>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
   },
   data () {
     return {
-      games: []
+      allGames: []
     }
   },
   methods: {
@@ -30,7 +30,7 @@ export default {
     }
   },
   async created () {
-    this.games = await this.fetchAllGames()
+    this.allGames = await this.fetchAllGames()
   }
 }
 </script>
