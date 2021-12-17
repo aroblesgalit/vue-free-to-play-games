@@ -30,6 +30,12 @@
         <Games :games="mobas" />
       </div>
     </div>
+    <div class="section">
+      <h2>Fighting</h2>
+      <div class="grid">
+        <Games :games="fightings" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -50,7 +56,8 @@ export default {
       mmorpgs: [],
       socials: [],
       cards: [],
-      mobas: []
+      mobas: [],
+      fightings: []
     }
   },
   methods: {
@@ -74,11 +81,13 @@ export default {
     const tempSocials = await this.fetchByCategory('social')
     const tempCards = await this.fetchByCategory('card')
     const tempMobas = await this.fetchByCategory('moba')
+    const tempFightings = await this.fetchByCategory('fighting')
     this.shooters = tempShooters.slice(0, 8)
     this.mmorpgs = tempMmorpgs.slice(0, 8)
     this.socials = tempSocials.slice(0, 8)
     this.cards = tempCards.slice(0, 8)
     this.mobas = tempMobas.slice(0, 8)
+    this.fightings = tempFightings.slice(0, 8)
   }
 }
 </script>
