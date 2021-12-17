@@ -23,14 +23,14 @@ export default {
     }
   },
   methods: {
-    async fetchGames () {
+    async fetchAllGames () {
       const res = await axios.get('http://localhost:8080/api/games')
       const data = res.data
       return data
     }
   },
   async created () {
-    this.games = await this.fetchGames()
+    this.games = await this.fetchAllGames()
   }
 }
 </script>
