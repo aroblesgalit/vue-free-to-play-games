@@ -19,7 +19,8 @@ export default {
   },
   data () {
     return {
-      allGames: []
+      allGames: [],
+      shooters: []
     }
   },
   methods: {
@@ -27,10 +28,18 @@ export default {
       const res = await axios.get('http://localhost:8080/api/games')
       const data = res.data
       return data
+    },
+    async fetchByCategory (category) {
+      const res = await axios.get(
+        `https://www.freetogame.com/api/games?category=${category}`
+      )
+      const data = res.data
+      return data
     }
   },
   async created () {
     this.allGames = await this.fetchAllGames()
+    this.shooters = await this.fetchByCategory('shooters')
   }
 }
 </script>
