@@ -1,56 +1,11 @@
 <template>
   <div class="home">
     <CategorySection category="Shooter" :games="allGames" />
-    <!-- <div class="section">
-      <h2>Shooter</h2>
-      <div class="grid">
-        <Games
-          :games="allGames.filter(game => game.genre == 'Shooter').slice(0, 8)"
-        />
-      </div>
-    </div>
-    <div class="section">
-      <h2>MMORPG</h2>
-      <div class="grid">
-        <Games
-          :games="allGames.filter(game => game.genre == 'MMORPG').slice(0, 8)"
-        />
-      </div>
-    </div>
-    <div class="section">
-      <h2>Social</h2>
-      <div class="grid">
-        <Games
-          :games="allGames.filter(game => game.genre == 'Social').slice(0, 8)"
-        />
-      </div>
-    </div>
-    <div class="section">
-      <h2>Card Game</h2>
-      <div class="grid">
-        <Games
-          :games="
-            allGames.filter(game => game.genre == 'Card Game').slice(0, 8)
-          "
-        />
-      </div>
-    </div>
-    <div class="section">
-      <h2>MOBA</h2>
-      <div class="grid">
-        <Games
-          :games="allGames.filter(game => game.genre == 'MOBA').slice(0, 8)"
-        />
-      </div>
-    </div>
-    <div class="section">
-      <h2>Fighting</h2>
-      <div class="grid">
-        <Games
-          :games="allGames.filter(game => game.genre == 'Fighting').slice(0, 8)"
-        />
-      </div>
-    </div> -->
+    <CategorySection category="MMORPG" :games="allGames" />
+    <CategorySection category="Social" :games="allGames" />
+    <CategorySection category="Card Game" :games="allGames" />
+    <CategorySection category="MOBA" :games="allGames" />
+    <CategorySection category="Fighting" :games="allGames" />
   </div>
 </template>
 
