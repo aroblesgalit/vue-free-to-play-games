@@ -12,13 +12,11 @@
 <script>
 // @ is an alias to /src
 import axios from 'axios'
-import Games from '../components/Games'
 import CategorySection from '../components/CategorySection.vue'
 
 export default {
   name: 'Home',
   components: {
-    Games,
     CategorySection
   },
   data () {
@@ -49,20 +47,5 @@ export default {
 <style scoped>
 .home {
   padding: 40px 100px;
-}
-
-.section {
-  margin-bottom: 60px;
-}
-
-h2 {
-  text-align: left;
-  margin-bottom: 30px;
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
 }
 </style>
