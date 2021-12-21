@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <div class="section">
+    <CategorySection category="Shooter" :games="allGames" />
+    <!-- <div class="section">
       <h2>Shooter</h2>
       <div class="grid">
         <Games
@@ -49,7 +50,7 @@
           :games="allGames.filter(game => game.genre == 'Fighting').slice(0, 8)"
         />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -57,11 +58,13 @@
 // @ is an alias to /src
 import axios from 'axios'
 import Games from '../components/Games'
+import CategorySection from '../components/CategorySection.vue'
 
 export default {
   name: 'Home',
   components: {
-    Games
+    Games,
+    CategorySection
   },
   data () {
     return {
