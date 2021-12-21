@@ -3,37 +3,37 @@
     <div class="section">
       <h2>Shooter</h2>
       <div class="grid">
-        <Games :games="shooters" />
+        <Games :games="shooters.slice(0, 8)" />
       </div>
     </div>
     <div class="section">
       <h2>MMORPG</h2>
       <div class="grid">
-        <Games :games="mmorpgs" />
+        <Games :games="mmorpgs.slice(0, 8)" />
       </div>
     </div>
     <div class="section">
       <h2>Social</h2>
       <div class="grid">
-        <Games :games="socials" />
+        <Games :games="socials.slice(0, 8)" />
       </div>
     </div>
     <div class="section">
       <h2>Card Game</h2>
       <div class="grid">
-        <Games :games="cards" />
+        <Games :games="cards.slice(0, 8)" />
       </div>
     </div>
     <div class="section">
       <h2>MOBA</h2>
       <div class="grid">
-        <Games :games="mobas" />
+        <Games :games="mobas.slice(0, 8)" />
       </div>
     </div>
     <div class="section">
       <h2>Fighting</h2>
       <div class="grid">
-        <Games :games="fightings" />
+        <Games :games="fightings.slice(0, 8)" />
       </div>
     </div>
   </div>
@@ -76,18 +76,12 @@ export default {
   },
   async created () {
     // this.allGames = await this.fetchAllGames()
-    const tempShooters = await this.fetchByCategory('shooter')
-    const tempMmorpgs = await this.fetchByCategory('mmorpg')
-    const tempSocials = await this.fetchByCategory('social')
-    const tempCards = await this.fetchByCategory('card')
-    const tempMobas = await this.fetchByCategory('moba')
-    const tempFightings = await this.fetchByCategory('fighting')
-    this.shooters = tempShooters.slice(0, 8)
-    this.mmorpgs = tempMmorpgs.slice(0, 8)
-    this.socials = tempSocials.slice(0, 8)
-    this.cards = tempCards.slice(0, 8)
-    this.mobas = tempMobas.slice(0, 8)
-    this.fightings = tempFightings.slice(0, 8)
+    this.shooters = await this.fetchByCategory('shooter')
+    this.mmorpgs = await this.fetchByCategory('mmorpg')
+    this.socials = await this.fetchByCategory('social')
+    this.cards = await this.fetchByCategory('card')
+    this.mobas = await this.fetchByCategory('moba')
+    this.fightings = await this.fetchByCategory('fighting')
   }
 }
 </script>
