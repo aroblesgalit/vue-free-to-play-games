@@ -3,37 +3,51 @@
     <div class="section">
       <h2>Shooter</h2>
       <div class="grid">
-        <Games :games="shooters.slice(0, 8)" />
+        <Games
+          :games="allGames.filter(game => game.genre == 'Shooter').slice(0, 8)"
+        />
       </div>
     </div>
     <div class="section">
       <h2>MMORPG</h2>
       <div class="grid">
-        <Games :games="mmorpgs.slice(0, 8)" />
+        <Games
+          :games="allGames.filter(game => game.genre == 'MMORPG').slice(0, 8)"
+        />
       </div>
     </div>
     <div class="section">
       <h2>Social</h2>
       <div class="grid">
-        <Games :games="socials.slice(0, 8)" />
+        <Games
+          :games="allGames.filter(game => game.genre == 'Social').slice(0, 8)"
+        />
       </div>
     </div>
     <div class="section">
       <h2>Card Game</h2>
       <div class="grid">
-        <Games :games="cards.slice(0, 8)" />
+        <Games
+          :games="
+            allGames.filter(game => game.genre == 'Card Game').slice(0, 8)
+          "
+        />
       </div>
     </div>
     <div class="section">
       <h2>MOBA</h2>
       <div class="grid">
-        <Games :games="mobas.slice(0, 8)" />
+        <Games
+          :games="allGames.filter(game => game.genre == 'MOBA').slice(0, 8)"
+        />
       </div>
     </div>
     <div class="section">
       <h2>Fighting</h2>
       <div class="grid">
-        <Games :games="fightings.slice(0, 8)" />
+        <Games
+          :games="allGames.filter(game => game.genre == 'Fighting').slice(0, 8)"
+        />
       </div>
     </div>
   </div>
@@ -51,13 +65,7 @@ export default {
   },
   data () {
     return {
-      allGames: [],
-      shooters: [],
-      mmorpgs: [],
-      socials: [],
-      cards: [],
-      mobas: [],
-      fightings: []
+      allGames: []
     }
   },
   methods: {
@@ -75,13 +83,7 @@ export default {
     }
   },
   async created () {
-    // this.allGames = await this.fetchAllGames()
-    this.shooters = await this.fetchByCategory('shooter')
-    this.mmorpgs = await this.fetchByCategory('mmorpg')
-    this.socials = await this.fetchByCategory('social')
-    this.cards = await this.fetchByCategory('card')
-    this.mobas = await this.fetchByCategory('moba')
-    this.fightings = await this.fetchByCategory('fighting')
+    this.allGames = await this.fetchAllGames()
   }
 }
 </script>
