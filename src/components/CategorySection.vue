@@ -36,7 +36,8 @@ h2 {
 
 .grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 20px;
+  overflow-x: scroll;
 }
 </style>

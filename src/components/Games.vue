@@ -20,8 +20,7 @@ export default {
 
 <style scoped>
 .box {
-  width: 100%;
-  max-width: 240px;
+  min-width: 240px;
   border-radius: 10px;
   overflow: hidden;
   background-color: #202a35;
