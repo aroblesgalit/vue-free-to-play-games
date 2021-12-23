@@ -2,7 +2,9 @@
   <div class="section">
     <div>
       <h2>{{ category }}</h2>
-      <router-link :to="[/category]">See all</router-link>
+      <router-link :to="'/category/' + category.toLowerCase()"
+        >See all</router-link
+      >
     </div>
     <div class="grid">
       <Games
