@@ -1,6 +1,9 @@
 <template>
   <div class="section">
-    <h2>{{ category }}</h2>
+    <div>
+      <h2>{{ category }}</h2>
+      <router-link :to="[/category]">See all</router-link>
+    </div>
     <div class="grid">
       <Games
         :games="games.filter(game => game.genre == `${category}`).slice(0, 8)"
